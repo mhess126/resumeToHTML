@@ -1,10 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      <h1>{{bio.firstName}} {{bio.lastName}}</h1>
+      <div class="row">
+        <div class="col-md-6">
+        <h1>{{bio.firstName}} {{bio.lastName}}</h1>
 
-      <h2>{{bio.location.city}}</h2>
+        <h2>{{bio.location.city}}</h2>
+        </div>
+        <div class="col-md-6">
+        <img class="media-object img-circle pull-right" data-src="holder.js/64x64" alt="64x64" src="http://www.gravatar.com/avatar/cff733cf90823edd218a834980379c61?s=100&amp;r=pg&amp;d=404" style="width: 100px; height: 100px; margin-top: 20px;">
 
+        </div>
+        </div>
       <hr style="color: #ccc; height: 4px;" />
       <section class="row">
         <header class="col-md-3">
