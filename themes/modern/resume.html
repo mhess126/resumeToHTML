@@ -59,6 +59,22 @@
       </section>
       {{/work.length}} 
 
+      {{#opensource.length}}
+      <section class="row">
+          <header class="col-md-3">
+              <h3>Open Source Contributions</h3>
+          </header>
+          <div class="col-md-9">
+              <div class="skills">
+                  {{#opensource}}
+                  <h3>{{project}}</h3>
+                  <strong>Contribution:</strong> <p>{{contribution}}</p>
+                  <strong>Technologies:</strong> <p>{{technologies}}</p>
+                  {{/opensource}}
+              </div>
+          </div>
+      </section>
+      {{/opensource.length}}
       {{#education.length}}
       <section class="row">
         <header class="col-md-3">
