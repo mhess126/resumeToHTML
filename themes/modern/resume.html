@@ -8,8 +8,25 @@
         <h2>{{bio.location.city}}</h2>
         </div>
         <div class="col-md-6">
-        <img class="media-object img-circle pull-right" data-src="holder.js/64x64" alt="64x64" src="{{bio.gravatar}}" style="width: 100px; height: 100px; margin-top: 20px;">
-
+               <div style="float: right;">
+                <h4>
+                {{#bio.phone.personal}}
+                <strong>Phone:</strong> {{bio.phone.personal}} <br />
+                {{/bio.phone.personal}}
+                {{#bio.email.personal}}
+                <strong>Email:</strong> {{bio.email.personal}}<br />
+                {{/bio.email.personal}}
+                {{#bio.profiles.twitter}}
+                <strong>Twitter:</strong> <a href="https://twitter.com/{{bio.profiles.twitter}}">@{{bio.profiles.twitter}}</a><br />
+                {{/bio.profiles.twitter}}
+                {{#bio.profiles.github}}
+                <strong>Github:</strong> <a href="https://github.com/{{bio.profiles.github}}">{{bio.profiles.github}}</a><br />
+                {{/bio.profiles.github}}
+                {{#bio.profiles.linkedin}}
+                <strong>Linkedin:</strong> <a href="https://www.linkedin.com/in/{{bio.profiles.linkedin}}">{{bio.profiles.linkedin}}</a><br />
+                {{/bio.profiles.linkedin}}
+            </h4>
+                </div>
         </div>
         </div>
       <hr style="color: #ccc; height: 4px;" />
@@ -19,21 +36,6 @@
         </header>
         <div class="col-md-9">
         <p>{{bio.summary}}</p>
-        {{#bio.phone.personal}}
-        <strong>Phone:</strong> {{bio.phone.personal}} <br />
-        {{/bio.phone.personal}}
-        {{#bio.email.personal}}
-        <strong>Email:</strong> {{bio.email.personal}}<br />
-        {{/bio.email.personal}}
-        {{#bio.profiles.twitter}}
-        <strong>Twitter:</strong> <a href="https://twitter.com/{{bio.profiles.twitter}}">@{{bio.profiles.twitter}}</a><br />
-        {{/bio.profiles.twitter}}
-        {{#bio.profiles.github}}
-        <strong>Github:</strong> <a href="https://github.com/{{bio.profiles.github}}">{{bio.profiles.github}}</a><br />
-        {{/bio.profiles.github}}
-        {{#bio.profiles.linkedin}}
-        <strong>Linkedin:</strong> <a href="https://www.linkedin.com/in/{{bio.profiles.linkedin}}">{{bio.profiles.linkedin}}</a><br />
-        {{/bio.profiles.linkedin}}
         </div>
       </section>
       {{#work.length}}
@@ -58,23 +60,49 @@
         </div>
       </section>
       {{/work.length}} 
-
+      <hr/>
       {{#opensource.length}}
       <section class="row">
           <header class="col-md-3">
               <h3>Open Source Contributions</h3>
           </header>
-          <div class="col-md-9">
-              <div class="skills">
                   {{#opensource}}
+                <div class="col-md-3">
+                    <div class="skills">
                   <h3>{{project}}</h3>
-                  <strong>Contribution:</strong> <p>{{contribution}}</p>
+                  <p>{{contribution}}</p>
                   <strong>Technologies:</strong> <p>{{technologies}}</p>
+                </div>
+                </div>
                   {{/opensource}}
-              </div>
-          </div>
-      </section>
       {{/opensource.length}}
+      </section>
+      <hr/>
+      {{#skills.length}}
+      <section class="row">
+        <header class="col-md-3">
+          <h3>Skills</h3>
+        </header>
+        <div class="col-md-9">
+          <div class="row-fluid skills">
+            {{#skills}}
+            <ul class="col-md-4">
+
+              <li>
+                <h4>{{name}}</h4>
+                <ul>
+                  {{#keywords}}
+                  <li>{{.}}</li>
+                  {{/keywords}}
+                </ul>
+              </li>
+            </ul>
+            {{/skills}}
+          </div>
+        </div>
+      </section>
+      {{/skills.length}}
+      <hr/>
       {{#education.length}}
       <section class="row">
         <header class="col-md-3">
@@ -98,30 +126,6 @@
         </div>
       </section>
       {{/education.length}} 
-      {{#skills.length}}
-      <section class="row">
-        <header class="col-md-3">
-          <h3>Skills</h3>
-        </header>
-        <div class="col-md-9">
-          <div class="row-fluid skills">
-            {{#skills}}
-            <ul class="col-md-6">
-
-              <li>
-                <h4>{{name}}</h4>
-                <ul>
-                  {{#keywords}}
-                  <li>{{.}}</li>
-                  {{/keywords}}
-                </ul>
-              </li>
-            </ul>
-            {{/skills}}
-          </div>
-        </div>
-      </section>
-      {{/skills.length}}
       {{#references.length}}
       <section class="row">
         <header class="col-md-3">
